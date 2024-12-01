@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+        <!--상단 메뉴 버튼-->
+    <div class="top-right-menu">
+            <button id="main-button" onclick="toggleDropdown()">메뉴</button>
+            <div id="dropdown-menu">
+              <button class="submenu-button" onclick="clickSubButton(0)">홈</button>
+              <button class="submenu-button" onclick="clickSubButton(1)">영화 포스터</button>
+              <button class="submenu-button" onclick="clickSubButton(2)">이상형 월드컵</button>
+              <button class="submenu-button" onclick="clickSubButton(3)">OST 맞추기</button>
+              <button class="submenu-button" onclick="clickSubButton(4)">캐릭터 맞추기</button>
+            </div>
+    </div>
+
     <div class="character-header">
         <!-- 캐릭터 이미지 -->
         <img src="토토로 4.png" alt="Character Image" class="character-image">
