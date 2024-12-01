@@ -33,13 +33,15 @@ body {
 
 .character-header {
     position: relative;
-    width: 100%;
+    /* width: 100% */;
     max-width: 1200px;
 }
 
 .character-image {
-    width: 100%;
-    height: auto;
+    width: 1200px;
+    height: 580px;
+    object-fit: cover;
+    
 }
 
 .character-title {
@@ -74,6 +76,11 @@ body {
 
 p {
     font-family: 'LeeSeoyun';
+    text-decoration-line: none;
+}
+
+a {
+    text-decoration-line: none;
 }
 
 .quote-section {
