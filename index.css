@@ -78,7 +78,7 @@ display: none;
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #121212;
@@ -90,14 +90,26 @@ body {
 
 .character-header {
     position: relative;
-    /* width: 100% */;
+    width: 100% ;
     max-width: 1200px;
+    height: 720px;
 }
 
-.character-image {
-    width: 1200px;
+.charater-content{
+    display: flex;
+    width: 100%;
+}
+.character-image-container {
+    position: relative;
     height: 580px;
-    object-fit: cover;
+    
+}
+.character-image {
+    /* width: 1200px;
+    height: 580px; */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     
 }
 
@@ -393,3 +405,136 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
 .character-card:hover img {
 transform: scale(1.1); /* 이미지 확대 */
 }
+
+.coverflow-section {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background-color:#101010;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    min-width: 1000px;
+}
+
+.coverflow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* 3D 효과를 위한 원근법 */
+    gap: 10px; /* 아이템 간 간격 */
+    width: 80%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.coverflow-item {
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
+    flex: 0 0 auto; /* 고정된 너비 유지 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform-origin: center center; /* 회전 축 */
+    object-fit:contain;
+}
+
+.coverflow-item:nth-child(odd) {
+    border: 3px solid #d261ff;
+}
+
+.coverflow-item.active {
+    transform: scale(1.2) translateZ(100px); /* 가운데 강조 */
+    z-index: 2;
+    opacity: 1;
+}
+
+.coverflow-item.prev,
+.coverflow-item.next {
+    transform: scale(0.8) translateX(-120px) rotateY(30deg); /* 양옆 아이템 효과 */
+    opacity: 0.7;
+}
+
+.coverflow-item.prev {
+    transform: scale(0.8) translateX(-120px) rotateY(30deg); /* 왼쪽 */
+}
+
+.coverflow-item.next {
+    transform: scale(0.8) translateX(120px) rotateY(-30deg); /* 오른쪽 */
+}
+
+.coverflow-item.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100vw);
+}
+
+.coverflow-item {
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
+    flex: 0 0 auto; /* 고정된 너비 유지 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform-origin: center center; /* 회전 축 */
+    pointer-events: none; /* 기본적으로 클릭 비활성화 */
+}
+
+.coverflow-item.active {
+    transform: scale(1.2) translateZ(100px); /* 가운데 강조 */
+    z-index: 2;
+    opacity: 1;
+    pointer-events: auto; /* 활성화된 아이템 클릭 가능 */
+}
+
+/* 로고 섹션 */
+    .logo-Section{
+        padding: 10px 0 0px;
+        border-color: #00000000;
+        border-radius: 10px;   
+        background-color: #141313;
+        max-width:800px;
+    }
+
+        /* 로고 박스 */
+        .logo-Box{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-items: center;
+        }
+
+        /* 지브리 홈페이지 로고 */
+        .img1{
+            margin-left: 5px;
+            margin-right: 5px;
+            width:35%  
+        }
+
+        /* 지브리 홈페이지 로고 */
+        .img2{
+            margin-left: 5px;
+            margin-right: 5px;
+            width:20%  
+        }
+
+        /* 로고 밑줄 제거 */
+        a {
+            display: inline-block;
+            text-decoration-line: none;
+            font-family: 'Garamond', 'Papyrus', sans-serif;
+        }
+
+        /* 로고 제목 스타일 */
+        .logo-text-style{
+            font-family: 'Garamond', 'Papyrus', sans-serif;
+        }
